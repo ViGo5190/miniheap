@@ -15,14 +15,14 @@
     "url": "https://github.com/ViGo5190/miniheap/issues"
   },
   "scripts": {
-    "test": "mocha tests/ --recursive --reporter spec",
+    "test": "mocha tests/ --recursive --reporter spec --compilers js:babel-register",
     "lint": "eslint 'src/**/*.js'",
     "prepush": "npm run lint && npm test",
     "build": "babel -d lib src",
     "build:watch": "babel -w -d lib src",
     "postpublish": "rm -rf lib",
     "prepublish": "npm run build",
-    "cover": "istanbul cover -- _mocha tests/ --recursive --reporter spec",
+    "cover": "istanbul cover -- _mocha tests/ --recursive --reporter spec --compilers js:babel-register",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "devDependencies": {

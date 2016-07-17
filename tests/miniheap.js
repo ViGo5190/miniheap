@@ -2,22 +2,22 @@
  * Stanislav Gumeniuk i@vigo.su
  */
 
-var assert = require('chai').assert;
-var Heap = require('../src/');
+let assert = require('chai').assert;
+let Heap = require('../src/');
 describe('services/cache', function () {
 
 
     describe('Check sort', function () {
         it('empty array', function () {
-            var heap = new Heap([]);
+            let heap = new Heap([]);
             assert.sameMembers(heap.data, []);
         });
 
-        for (var i=1;i<=4;i++){
+        for (let i=1;i<=4;i++){
             it('test '+i, function () {
-                var inData = require('../tests_mocks/sort/'+i+'/in.js');
-                var outData = require('../tests_mocks/sort/'+i+'/out.js');
-                var heap = new Heap(inData);
+                let inData = require('../tests_mocks/sort/'+i+'/in.js');
+                let outData = require('../tests_mocks/sort/'+i+'/out.js');
+                let heap = new Heap(inData);
                 assert.deepEqual(heap.data, outData);
             });
         }
@@ -25,16 +25,15 @@ describe('services/cache', function () {
 
     describe('Check heapify', function () {
         it('empty array', function () {
-            var heap = new Heap([]);
+            let heap = new Heap([]);
             assert.sameMembers(heap.heapify(), []);
         });
 
-        for (var i=1;i<=6;i++){
-            it('test '+i, function () {
-                var inData = require('../tests_mocks/heapify/'+i+'/in.js');
-                var outData = require('../tests_mocks/heapify/'+i+'/out.js');
-                var heap = new Heap(inData);
-                console.log(heap.heapify());
+        for (let j=1;j<=6;j++){
+            it('test '+j, function () {
+                let inData = require('../tests_mocks/heapify/'+j+'/in.js');
+                let outData = require('../tests_mocks/heapify/'+j+'/out.js');
+                let heap = new Heap(inData);
                 assert.deepEqual(heap.heapify(), outData);
             });
         }

@@ -31,7 +31,7 @@ function sortHeapArray(heapArray) {
                 heapArray[j + 1] = tmp;
                 swap = true;
             }
-            if ((heapArray[j].parentId === heapArray[j + 1].parentId) & (heapArray[j].id > heapArray[j + 1].id)) {
+            if ((heapArray[j].parentId === heapArray[j + 1].parentId) && (heapArray[j].id > heapArray[j + 1].id)) {
                 let tmp = heapArray[j];
                 heapArray[j] = heapArray[j + 1];
                 heapArray[j + 1] = tmp;

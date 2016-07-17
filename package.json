@@ -1,0 +1,41 @@
+{
+  "name": "miniheap",
+  "version": "0.1.0",
+  "description": "min heap",
+  "keywords": [
+    "heap"
+  ],
+  "author": "Stanislav Gumeniuk <i@vigo.su>",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViGo5190/miniheap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ViGo5190/miniheap/issues"
+  },
+  "scripts": {
+    "test": "mocha tests/ --recursive --reporter spec",
+    "lint": "eslint 'src/**/*.js'",
+    "prepush": "npm run lint && npm test",
+    "build": "babel -d lib src",
+    "build:watch": "babel -w -d lib src",
+    "postpublish": "rm -rf lib",
+    "prepublish": "npm run build",
+    "cover": "istanbul cover -- _mocha tests/ --recursive --reporter spec",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.0",
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "coveralls": "^2.11.6",
+    "istanbul": "^0.4.2"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "license": "ISC"
+}
